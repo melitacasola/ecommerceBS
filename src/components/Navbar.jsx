@@ -11,9 +11,10 @@ const Navbar = () => {
                 </Link>
                 <nav className="flex flex-col lg:text-row gap-4 lg:mt-0">               
                     <div className="flex align-baseline">
-                        <Link to="/store-jersey" className="uppercase mx-4 text-xl font-bold text-pink-500">Jersey & Calzas</Link>
-                        <Link to="/store-jersey" className="uppercase mx-4 text-xl font-bold text-pink-500">Medias & Accesorios</Link>
+                        <Link to="/categoria/jerseys" className="uppercase mx-4 text-xl font-bold text-pink-500">Jersey & Calzas</Link>
+                        <Link to="/categoria/accesorios" className="uppercase mx-4 text-xl font-bold text-pink-500">Medias & Accesorios</Link>
                         <Link to="/store-jersey" className="uppercase mx-4 text-xl font-bold text-lime-500">Login</Link>
+                        <Link to="/checkout" className="uppercase mx-4 text-xl font-bold text-lime-500">Checkout</Link>
                         <Link to="/store-jersey" className="uppercase mx-4 text-xl font-bold text-lime-500"><Cartwidget/> </Link>
                     </div>
                     

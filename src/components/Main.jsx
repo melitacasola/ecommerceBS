@@ -1,8 +1,6 @@
 
 import ItemListContainer from "./ItemListContainer";
 
-
-
 const Main = () => {
   return (
       <>
@@ -13,8 +11,7 @@ const Main = () => {
 
           
       </>
-
-        
+ 
   );
 }
  
