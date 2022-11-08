@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 
 
 const Item = (item) => {
-    const [ite, setITem] = useState(item);
-    console.log(item);
+    const [ite, setITem] = useState([]);
+    useEffect(() => {
+      setITem(item)
+        console.log(ite);
+     
+    }, [])
+    
 
     return ( 
             

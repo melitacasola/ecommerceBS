@@ -3,10 +3,13 @@ import Logo from '../assets/Logo.jpeg';
 import ItemCount from './ItemCount';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
     const {idcategoria} = useParams([]);
+
     console.log(idcategoria);
+
     const [productos, setProductos] = useState([]);
 
     let productosHC = [
@@ -124,13 +127,19 @@ const ItemListContainer = ({ greeting }) => {
             </div> 
             <ItemList/>
             <div>
-                {!productos.length && "loguin...."}
+                {!productos.length && "login...."}
                 {productos.map((item) => (
-                <>{JSON.stringify(item)}</>
-            ))}</div>
+                <div key ={item.id}>
+                {JSON.stringify(item)}
+                <Link to={"/item/" + item.id} className="mx-4 font-bold text-emerald-600">Ir al Item</Link>
+                <br/>
+                <br/>
+                </div>
+            ))}
+            
             <img src={Logo} alt="logo" className='flex w-1/2 rounded-lg justify-center m-5' />
             <ItemCount inicial={1} stock={5} onAdd={onAdd} />
-
+            </div>
         </div>
     );
 }

@@ -8,6 +8,7 @@ import Item from './components/Item';
 // import TestPromesa from './components/TestPromesa';
 import Footer from './components/Footer';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 import Checkout from './components/Checkout';
 
 
@@ -24,7 +25,7 @@ function App() {
         <Route path='/store-jersey' element={<Store />} />
         <Route path='/checkout' element={<Checkout />} />
         <Route path='/categoria/:idcategoria' element={<ItemListContainer />} />
-        {/* <Route path='/item/:iditem' element={<ItemDetailContainer />} /> */}
+        <Route path='/item/:iditem' element={<ItemDetailContainer />} />
       </Routes> 
 
         <Item/>
