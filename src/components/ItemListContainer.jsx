@@ -5,13 +5,13 @@ import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
+
+
 const ItemListContainer = ({ greeting }) => {
     const {idcategoria} = useParams([]);
 
-    console.log(idcategoria);
-
     const [productos, setProductos] = useState([]);
-
+    //se inicializa en un array vacio
     let productosHC = [
         {
            "id":1,
@@ -97,7 +97,7 @@ const ItemListContainer = ({ greeting }) => {
         }
       ];
 
-      useEffect(() => {
+    useEffect(() => {
         const productosPromesa = new Promise((res, rej)=> {
             setTimeout(() => {
                 res(productosHC)
@@ -113,11 +113,6 @@ const ItemListContainer = ({ greeting }) => {
 }, [idcategoria]);
       
 
-    //onAdd() --> callback
-
-    const onAdd = (cantidad) =>{
-        console.log(`compraste ${cantidad} unidades`);
-    }
 
     return (
         <div className="container my-auto py-auto flex flex-col bg-white shadow-md  rounded-xl font-bold text-center w-1/2 justify-center items-center">
@@ -125,20 +120,12 @@ const ItemListContainer = ({ greeting }) => {
                 {greeting}
 
             </div> 
-            <ItemList/>
+            <ItemList productos={productos}/>
             <div>
                 {!productos.length && "login...."}
-                {productos.map((item) => (
-                <div key ={item.id}>
-                {JSON.stringify(item)}
-                <Link to={"/item/" + item.id} className="mx-4 font-bold text-emerald-600">Ir al Item</Link>
-                <br/>
-                <br/>
-                </div>
-            ))}
+                
             
-            <img src={Logo} alt="logo" className='flex w-1/2 rounded-lg justify-center m-5' />
-            <ItemCount inicial={1} stock={5} onAdd={onAdd} />
+
             </div>
         </div>
     );

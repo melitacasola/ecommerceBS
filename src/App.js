@@ -21,14 +21,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/store-jersey' element={<Store />} />
-        <Route path='/store-jersey' element={<Store />} />
-        <Route path='/store-jersey' element={<Store />} />
         <Route path='/checkout' element={<Checkout />} />
         <Route path='/categoria/:idcategoria' element={<ItemListContainer />} />
         <Route path='/item/:iditem' element={<ItemDetailContainer />} />
       </Routes> 
-
-        <Item/>
         <Footer/>
     </BrowserRouter>
 
