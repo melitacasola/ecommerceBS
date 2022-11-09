@@ -27,6 +27,7 @@ const Item = (props, key) => {
                 <dt className="sr-only">Rating</dt>
                 <dd className="px-1.5 ring-1 ring-slate-200 rounded"> {producto && producto.detalle}</dd>
             </div>
+            
             <div className="ml-2">
                 <dt className="sr-only">{producto && producto.categoria}</dt>
                 <dd>stock: {producto && producto.stock}</dd>
